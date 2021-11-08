@@ -2742,11 +2742,11 @@ namespace Microsoft.Build.UnitTests.Definition
         public void PropertiesInToolsetsFromConfigFileAreExpandedInToolsPath()
         {
             string binPathConfig = NativeMethodsShared.IsWindows ?
-                @"D:\windows\$(p1)\Framework\v2.0.x86ret\$(COMPUTERNAME)" :
-                "/windows/$(p1)/Framework/v2.0.x86ret";
+                @"D:\windows\$(p1)\Framework64\v2.0.x86ret\$(COMPUTERNAME)" :
+                "/windows/$(p1)/Framework64/v2.0.x86ret";
             string toolsPathConfig = NativeMethodsShared.IsWindows ?
-                @"D:\$(p2)\$(p1)\Framework\v2.0.x86ret\$(COMPUTERNAME)" :
-                "/$(p2)/$(p1)/Framework/v2.0.x86ret";
+                @"D:\$(p2)\$(p1)\Framework64\v2.0.x86ret\$(COMPUTERNAME)" :
+                "/$(p2)/$(p1)/Framework64/v2.0.x86ret";
 
             // $(COMPUTERNAME) is just a convenient env var. $(NUMBER_OF_PROCESSORS) isn't defined on Longhorn
             ToolsetConfigurationReaderTestHelper.WriteConfigFile(@"
@@ -2784,7 +2784,7 @@ namespace Microsoft.Build.UnitTests.Definition
             string expectedToolsPath = NativeMethodsShared.IsWindows
                                            ? @"D:\windows\Microsoft.NET\Framework64\v2.0.x86ret\"
                                              + Environment.MachineName
-                                           : "/windows/Microsoft.NET/Framework/v2.0.x86ret";
+                                           : "/windows/Microsoft.NET/Framework64/v2.0.x86ret";
             Assert.Equal(expectedToolsPath, values["4.0"].ToolsPath);
             Assert.Equal("v3" + expectedToolsPath, values["4.0"].Properties["p3"].EvaluatedValue);
         }

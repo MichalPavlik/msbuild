@@ -925,7 +925,7 @@ namespace Microsoft.Build.Shared
             }
 
             combinedPath = NativeMethodsShared.IsWindows
-                               ? Path.Combine(programFiles32, "Reference Assemblies\\Microsoft\\Framework")
+                               ? Path.Combine(programFiles64, "Reference Assemblies\\Microsoft\\Framework")
                                : Path.Combine(NativeMethodsShared.FrameworkBasePath, "xbuild-frameworks");
 
             return Path.GetFullPath(combinedPath);

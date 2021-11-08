@@ -110,7 +110,7 @@ namespace Microsoft.Build.Execution
         /// <summary>
         /// The default tools version.
         /// </summary>
-        private string _defaultToolsVersion = "2.0";
+        private string _defaultToolsVersion = "4.8";
 
         /// <summary>
         /// Flag indicating whether node reuse should be enabled.
