@@ -650,11 +650,11 @@ namespace Microsoft.Build.Evaluation
     /// &lt;configuration&gt;
     ///     &lt;msbuildToolsets default="2.0"&gt;
     ///         &lt;toolset toolsVersion="2.0"&gt;
-    ///             &lt;property name="MSBuildBinPath" value="D:\windows\Microsoft.NET\Framework\v2.0.x86ret\"/&gt;
+    ///             &lt;property name="MSBuildBinPath" value="D:\windows\Microsoft.NET\Framework64\v2.0.x86ret\"/&gt;
     ///             &lt;property name="SomeOtherProperty" value="SomeOtherPropertyValue"/&gt;
     ///         &lt;/toolset&gt;
     ///         &lt;toolset toolsVersion="3.5"&gt;
-    ///             &lt;property name="MSBuildBinPath" value="D:\windows\Microsoft.NET\Framework\v3.5.x86ret\"/&gt;
+    ///             &lt;property name="MSBuildBinPath" value="D:\windows\Microsoft.NET\Framework64\v3.5.x86ret\"/&gt;
     ///         &lt;/toolset&gt;
     ///     &lt;/msbuildToolsets&gt;
     /// &lt;/configuration&gt;

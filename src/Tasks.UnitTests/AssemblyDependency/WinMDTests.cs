@@ -485,7 +485,7 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             t.BuildEngine = engine;
             t.Assemblies = assemblyFiles;
             t.SearchPaths = new String[] { @"{TargetFrameworkDirectory}", @"C:\WinMD", @"C:\WinMD\v4\", @"C:\WinMD\v255\" };
-            t.TargetFrameworkDirectories = new string[] { @"c:\WINNT\Microsoft.NET\Framework\v4.0.MyVersion" };
+            t.TargetFrameworkDirectories = new string[] { @"c:\WINNT\Microsoft.NET\Framework64\v4.0.MyVersion" };
             t.TargetProcessorArchitecture = "x86";
             bool succeeded = Execute(t);
 

@@ -65,7 +65,7 @@ namespace Microsoft.Build.UnitTests.Definition
                    </configSections>
                    <msbuildToolsets default=""2.0"">
                      <toolset toolsVersion=""2.0"">
-                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework\v2.0.x86ret\""/>
+                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework64\v2.0.x86ret\""/>
                      </toolset>
                    </msbuildToolsets>
                  </configuration>"));
@@ -81,7 +81,7 @@ namespace Microsoft.Build.UnitTests.Definition
             Assert.Equal("2.0", msbuildToolsetSection.Toolsets.GetElement(0).toolsVersion);
             Assert.Single(msbuildToolsetSection.Toolsets.GetElement("2.0").PropertyElements);
             Assert.Equal(
-              @"D:\windows\Microsoft.NET\Framework\v2.0.x86ret\",
+              @"D:\windows\Microsoft.NET\Framework64\v2.0.x86ret\",
               msbuildToolsetSection.Toolsets.GetElement("2.0").PropertyElements.GetElement("MSBuildBinPath").Value);
 
             Assert.Empty(msbuildToolsetSection.Toolsets.GetElement(0).AllProjectImportSearchPaths);
@@ -101,7 +101,7 @@ namespace Microsoft.Build.UnitTests.Definition
                    </configSections>
                    <msbuildToolsets default=""2.0"" msbuildOverrideTasksPath=""c:\foo"">
                      <toolset toolsVersion=""2.0"">
-                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework\v2.0.x86ret\""/>
+                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework64\v2.0.x86ret\""/>
                      </toolset>
                    </msbuildToolsets>
                  </configuration>"));
@@ -127,7 +127,7 @@ namespace Microsoft.Build.UnitTests.Definition
                    </configSections>
                    <msbuildToolsets default=""2.0"" msbuildOverrideTasksPath="""">
                      <toolset toolsVersion=""2.0"">
-                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework\v2.0.x86ret\""/>
+                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework64\v2.0.x86ret\""/>
                      </toolset>
                    </msbuildToolsets>
                  </configuration>"));
@@ -159,7 +159,7 @@ namespace Microsoft.Build.UnitTests.Definition
                    </startup>
                    <msbuildToolsets default=""2.0"">
                      <toolset toolsVersion=""2.0"">
-                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework\v2.0.x86ret\""/>
+                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework64\v2.0.x86ret\""/>
                      </toolset>
                    </msbuildToolsets>
                    <runtime>
@@ -181,7 +181,7 @@ namespace Microsoft.Build.UnitTests.Definition
             Assert.Equal("2.0", msbuildToolsetSection.Toolsets.GetElement(0).toolsVersion);
             Assert.Single(msbuildToolsetSection.Toolsets.GetElement("2.0").PropertyElements);
             Assert.Equal(
-              @"D:\windows\Microsoft.NET\Framework\v2.0.x86ret\",
+              @"D:\windows\Microsoft.NET\Framework64\v2.0.x86ret\",
               msbuildToolsetSection.Toolsets.GetElement("2.0").PropertyElements.GetElement("MSBuildBinPath").Value);
 
             Assert.Empty(msbuildToolsetSection.Toolsets.GetElement(0).AllProjectImportSearchPaths);
@@ -208,10 +208,10 @@ namespace Microsoft.Build.UnitTests.Definition
                    </configSections>
                    <msbuildToolsets default=""2.0"">
                      <toolset>
-                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework\v2.0.x86ret\""/>
+                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework64\v2.0.x86ret\""/>
                      </toolset>
                      <toolset toolsVersion=""4.0"">
-                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework\v3.5.x86ret\""/>
+                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework64\v3.5.x86ret\""/>
                      </toolset>
                    </msbuildToolsets>
                  </configuration>"));
@@ -237,10 +237,10 @@ namespace Microsoft.Build.UnitTests.Definition
                    </configSections>
                    <msbuildToolsets default=""2.0"">
                      <toolset toolsVersion=""2.0"">
-                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework\v2.0.x86ret\""/>
+                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework64\v2.0.x86ret\""/>
                      </toolset>
                      <toolset toolsVersion=""2.0"">
-                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework\v3.5.x86ret\""/>
+                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework64\v3.5.x86ret\""/>
                      </toolset>
                    </msbuildToolsets>
                  </configuration>"));
@@ -268,7 +268,7 @@ namespace Microsoft.Build.UnitTests.Definition
                    <msbuildToolsets default=""2.0"">
                      <toolset />
                      <toolset toolsVersion=""4.0"">
-                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework\v3.5.x86ret\""/>
+                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework64\v3.5.x86ret\""/>
                      </toolset>
                    </msbuildToolsets>
                  </configuration>"));
@@ -296,7 +296,7 @@ namespace Microsoft.Build.UnitTests.Definition
                    </configSections>
                    <msbuildToolsets default=""4.0"">
                      <toolset toolsVersion=""4.0"">
-                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework\v3.5.x86ret\""/>
+                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework64\v3.5.x86ret\""/>
                      </toolset>
                    </msbuildToolsets>
                  </configuration>"));
@@ -310,7 +310,7 @@ namespace Microsoft.Build.UnitTests.Definition
             Assert.Equal("4.0", msbuildToolsetSection.Toolsets.GetElement(0).toolsVersion);
             Assert.Single(msbuildToolsetSection.Toolsets.GetElement("4.0").PropertyElements);
             Assert.Equal(
-              @"D:\windows\Microsoft.NET\Framework\v3.5.x86ret\",
+              @"D:\windows\Microsoft.NET\Framework64\v3.5.x86ret\",
               msbuildToolsetSection.Toolsets.GetElement("4.0").PropertyElements.GetElement("MSBuildBinPath").Value);
         }
         #endregion
@@ -336,7 +336,7 @@ namespace Microsoft.Build.UnitTests.Definition
                    </configSections>
                    <msbuildToolsets default=""4.0"">
                      <toolset toolsVersion=""4.0"">
-                       <property value=""D:\windows\Microsoft.NET\Framework\v3.5.x86ret\""/>
+                       <property value=""D:\windows\Microsoft.NET\Framework64\v3.5.x86ret\""/>
                      </toolset>
                    </msbuildToolsets>
                  </configuration>"));
@@ -388,8 +388,8 @@ namespace Microsoft.Build.UnitTests.Definition
                    </configSections>
                    <msbuildToolsets default=""4.0"">
                      <toolset ToolsVersion=""msbuilddefaulttoolsversion"">
-                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework\v2.0.x86ret\""/>
-                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework\v3.5.x86ret\""/>
+                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework64\v2.0.x86ret\""/>
+                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework64\v3.5.x86ret\""/>
                      </toolset>
                    </msbuildToolsets>
                  </configuration>"));
@@ -416,7 +416,7 @@ namespace Microsoft.Build.UnitTests.Definition
                    </configSections>
                    <msbuildToolsets default=""4.0"">
                      <toolset toolsVersion=""4.0"">
-                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework\v2.0.x86ret\""/>
+                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework64\v2.0.x86ret\""/>
                        <property />
                      </toolset>
                    </msbuildToolsets>
@@ -445,7 +445,7 @@ namespace Microsoft.Build.UnitTests.Definition
                    </configSections>
                    <msbuildToolsets default=""2.0"">
                      <toolset toolsVersion=""2.0"">
-                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework\v2.0.x86ret\""/>
+                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework64\v2.0.x86ret\""/>
                        <property name=""SomeOtherPropertyName"" value=""SomeOtherPropertyValue""/>
                      </toolset>
                    </msbuildToolsets>
@@ -460,7 +460,7 @@ namespace Microsoft.Build.UnitTests.Definition
             Assert.Equal(2, msbuildToolsetSection.Toolsets.GetElement("2.0").PropertyElements.Count);
 
             Assert.Equal(
-              @"D:\windows\Microsoft.NET\Framework\v2.0.x86ret\",
+              @"D:\windows\Microsoft.NET\Framework64\v2.0.x86ret\",
               msbuildToolsetSection.Toolsets.GetElement("2.0").PropertyElements.GetElement("MSBuildBinPath").Value);
             Assert.Equal(
               @"SomeOtherPropertyValue",
@@ -480,7 +480,7 @@ namespace Microsoft.Build.UnitTests.Definition
                    </configSections>
                    <msbuildToolsets default=""2.0"">
                      <toolset toolsVersion=""2.0"">
-                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework\v2.0.x86ret\""/>
+                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework64\v2.0.x86ret\""/>
                        <property name=""SomeOtherPropertyName"" value=""SomeOtherPropertyValue""/>
                      </toolset>
                    </msbuildToolsets>
@@ -494,7 +494,7 @@ namespace Microsoft.Build.UnitTests.Definition
             Assert.Equal("2.0", msbuildToolsetSection.Default);
             Assert.Single(msbuildToolsetSection.Toolsets);
             Assert.Equal(2, msbuildToolsetSection.Toolsets.GetElement("2.0").PropertyElements.Count);
-            Assert.Equal(@"D:\windows\Microsoft.NET\Framework\v2.0.x86ret\",
+            Assert.Equal(@"D:\windows\Microsoft.NET\Framework64\v2.0.x86ret\",
                                    msbuildToolsetSection.Toolsets.GetElement("2.0").PropertyElements.GetElement("MSBuildBinPath").Value);
             Assert.Equal(@"SomeOtherPropertyValue",
                                    msbuildToolsetSection.Toolsets.GetElement("2.0").PropertyElements.GetElement("SomeOtherPropertyName").Value);
@@ -520,8 +520,8 @@ namespace Microsoft.Build.UnitTests.Definition
                    </configSections>
                    <msbuildToolsets default=""2.0"">
                      <toolset toolsVersion=""2.0"">
-                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework\v2.0.x86ret\""/>
-                       <property name=""MSBuildToolsPath"" value=""D:\windows\Microsoft.NET\Framework\v2.0.x86ret\""/>
+                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework64\v2.0.x86ret\""/>
+                       <property name=""MSBuildToolsPath"" value=""D:\windows\Microsoft.NET\Framework64\v2.0.x86ret\""/>
                        <projectImportSearchPaths>
                          <searchPaths os=""windows"">
                             <property name=""MSBuildExtensionsPath"" value=""c:\foo""/>
@@ -548,7 +548,7 @@ namespace Microsoft.Build.UnitTests.Definition
             Assert.Equal("2.0", msbuildToolsetSection.Toolsets.GetElement(0).toolsVersion);
             Assert.Equal(2, msbuildToolsetSection.Toolsets.GetElement("2.0").PropertyElements.Count);
             Assert.Equal(
-              @"D:\windows\Microsoft.NET\Framework\v2.0.x86ret\",
+              @"D:\windows\Microsoft.NET\Framework64\v2.0.x86ret\",
               msbuildToolsetSection.Toolsets.GetElement("2.0").PropertyElements.GetElement("MSBuildBinPath").Value);
 
             Assert.Equal(3, msbuildToolsetSection.Toolsets.GetElement(0).AllProjectImportSearchPaths.Count);
@@ -617,7 +617,7 @@ namespace Microsoft.Build.UnitTests.Definition
                    </configSections>
                    <msbuildToolsets default=""4.0"">
                      <toolset ToolsVersion=""2.0"">
-                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework\v3.5.x86ret\""/>
+                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework64\v3.5.x86ret\""/>
 
                        <projectImportSearchPaths>
                          <searchPaths os=""windows"">
@@ -653,7 +653,7 @@ namespace Microsoft.Build.UnitTests.Definition
                    </configSections>
                    <msbuildToolsets default=""4.0"">
                      <toolset ToolsVersion=""2.0"">
-                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework\v3.5.x86ret\""/>
+                       <property name=""MSBuildBinPath"" value=""D:\windows\Microsoft.NET\Framework64\v3.5.x86ret\""/>
 
                        <projectImportSearchPaths>
                          <searchPaths os=""windows"">

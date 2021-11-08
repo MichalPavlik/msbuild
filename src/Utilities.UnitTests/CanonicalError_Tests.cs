@@ -12,7 +12,7 @@ namespace Microsoft.Build.UnitTests
         [Fact]
         public void EmptyOrigin()
         {
-            ValidateToolError(@"error CS0006: Metadata file 'C:\WINDOWS\Microsoft.NET\Framework\v1.2.21213\System.dll' could not be found", "", CanonicalError.Parts.Category.Error, "CS0006", @"Metadata file 'C:\WINDOWS\Microsoft.NET\Framework\v1.2.21213\System.dll' could not be found");
+            ValidateToolError(@"error CS0006: Metadata file 'C:\WINDOWS\Microsoft.NET\Framework64\v1.2.21213\System.dll' could not be found", "", CanonicalError.Parts.Category.Error, "CS0006", @"Metadata file 'C:\WINDOWS\Microsoft.NET\Framework64\v1.2.21213\System.dll' could not be found");
         }
 
         [Fact]
@@ -34,7 +34,7 @@ namespace Microsoft.Build.UnitTests
         public void VbcWithFilename()
         {
             // From VBC.EXE
-            ValidateFileNameLineError(@"C:\WINDOWS\Microsoft.NET\Framework\v1.2.x86fre\foo.resx(2) : error BC30188: Declaration expected.", @"C:\WINDOWS\Microsoft.NET\Framework\v1.2.x86fre\foo.resx", 2, CanonicalError.Parts.Category.Error, "BC30188", "Declaration expected.");
+            ValidateFileNameLineError(@"C:\WINDOWS\Microsoft.NET\Framework64\v1.2.x86fre\foo.resx(2) : error BC30188: Declaration expected.", @"C:\WINDOWS\Microsoft.NET\Framework64\v1.2.x86fre\foo.resx", 2, CanonicalError.Parts.Category.Error, "BC30188", "Declaration expected.");
         }
 
         [Fact]

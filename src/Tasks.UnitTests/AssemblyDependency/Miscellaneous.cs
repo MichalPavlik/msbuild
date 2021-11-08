@@ -744,7 +744,7 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
                 t.SearchPaths = DefaultPaths;
 
                 string fxVersion = fxVersions[i];
-                t.TargetFrameworkDirectories = new string[] { String.Format(@"c:\WINNT\Microsoft.NET\Framework\{0}.MyVersion", fxVersion) };
+                t.TargetFrameworkDirectories = new string[] { String.Format(@"c:\WINNT\Microsoft.NET\Framework64\{0}.MyVersion", fxVersion) };
                 t.TargetFrameworkVersion = fxVersion;
                 Execute(t);
 
@@ -3395,7 +3395,7 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             t.SearchPaths = new string[]
             {
                 @"c:\Regress563286",
-                @"c:\WINNT\Microsoft.NET\Framework\v2.0.MyVersion"
+                @"c:\WINNT\Microsoft.NET\Framework64\v2.0.MyVersion"
             };
             Execute(t);
 
@@ -5264,7 +5264,7 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             };
 
             t.Assemblies[0].SetMetadata("SpecificVersion", "false");    // Important to this bug.
-            t.TargetFrameworkDirectories = new string[] { @"r:\WINDOWS\Microsoft.NET\Framework\v2.0.myfx" };
+            t.TargetFrameworkDirectories = new string[] { @"r:\WINDOWS\Microsoft.NET\Framework64\v2.0.myfx" };
 
             t.SearchPaths = new string[]
             {
@@ -5315,7 +5315,7 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
                 new TaskItem("SomeAssembly")
             };
 
-            t.TargetFrameworkDirectories = new string[] { @"r:\WINDOWS\Microsoft.NET\Framework\v2.0.myfx" };
+            t.TargetFrameworkDirectories = new string[] { @"r:\WINDOWS\Microsoft.NET\Framework64\v2.0.myfx" };
             t.InstalledAssemblyTables = new TaskItem[] { new TaskItem("asdfasdfasjr390rjfiogatg~~!@@##$%$%%^&**()") };
 
             Execute(t);
@@ -5356,7 +5356,7 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
                 @"{HintPathFromItem}",
                 @"{TargetFrameworkDirectory}"
             };
-            t.TargetFrameworkDirectories = new string[] { @"r:\WINDOWS\Microsoft.NET\Framework\v2.0.myfx" };
+            t.TargetFrameworkDirectories = new string[] { @"r:\WINDOWS\Microsoft.NET\Framework64\v2.0.myfx" };
 
             string redistFile = FileUtilities.GetTemporaryFile();
 
@@ -5465,7 +5465,7 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             {
                 @"{TargetFrameworkDirectory}"
             };
-            t.TargetFrameworkDirectories = new string[] { @"r:\WINDOWS\Microsoft.NET\Framework\v2.0.myfx" };
+            t.TargetFrameworkDirectories = new string[] { @"r:\WINDOWS\Microsoft.NET\Framework64\v2.0.myfx" };
 
             FileExists cachedFileExists = fileExists;
             GetAssemblyName cachedGetAssemblyName = getAssemblyName;
@@ -5476,8 +5476,8 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             {
                 fileExists = new FileExists(delegate (string path)
                 {
-                    if (String.Equals(path, @"r:\WINDOWS\Microsoft.NET\Framework\v2.0.myfx\Microsoft.Build.Engine.dll", StringComparison.OrdinalIgnoreCase) ||
-                        String.Equals(path, @"r:\WINDOWS\Microsoft.NET\Framework\v2.0.myfx\System.Xml.dll", StringComparison.OrdinalIgnoreCase) ||
+                    if (String.Equals(path, @"r:\WINDOWS\Microsoft.NET\Framework64\v2.0.myfx\Microsoft.Build.Engine.dll", StringComparison.OrdinalIgnoreCase) ||
+                        String.Equals(path, @"r:\WINDOWS\Microsoft.NET\Framework64\v2.0.myfx\System.Xml.dll", StringComparison.OrdinalIgnoreCase) ||
                         path.EndsWith("RarCache", StringComparison.OrdinalIgnoreCase))
                     {
                         return true;
@@ -5526,7 +5526,7 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
                 @"{TargetFrameworkDirectory}",
                 @"c:\Somewhere\"
             };
-            t.TargetFrameworkDirectories = new string[] { @"r:\WINDOWS\Microsoft.NET\Framework\v2.0.myfx" };
+            t.TargetFrameworkDirectories = new string[] { @"r:\WINDOWS\Microsoft.NET\Framework64\v2.0.myfx" };
 
             FileExists cachedFileExists = fileExists;
             GetAssemblyName cachedGetAssemblyName = getAssemblyName;
@@ -5547,9 +5547,9 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             {
                 fileExists = new FileExists(delegate (string path)
                 {
-                    if (String.Equals(path, @"r:\WINDOWS\Microsoft.NET\Framework\v2.0.myfx\Microsoft.Build.Engine.dll", StringComparison.OrdinalIgnoreCase) ||
-                        String.Equals(path, @"r:\WINDOWS\Microsoft.NET\Framework\v2.0.myfx\System.Xml.dll", StringComparison.OrdinalIgnoreCase) ||
-                        String.Equals(path, @"r:\WINDOWS\Microsoft.NET\Framework\v2.0.myfx\B.dll", StringComparison.OrdinalIgnoreCase) ||
+                    if (String.Equals(path, @"r:\WINDOWS\Microsoft.NET\Framework64\v2.0.myfx\Microsoft.Build.Engine.dll", StringComparison.OrdinalIgnoreCase) ||
+                        String.Equals(path, @"r:\WINDOWS\Microsoft.NET\Framework64\v2.0.myfx\System.Xml.dll", StringComparison.OrdinalIgnoreCase) ||
+                        String.Equals(path, @"r:\WINDOWS\Microsoft.NET\Framework64\v2.0.myfx\B.dll", StringComparison.OrdinalIgnoreCase) ||
                         String.Equals(path, @"c:\somewhere\c.dll", StringComparison.OrdinalIgnoreCase) ||
                         String.Equals(path, @"c:\somewhere\d.dll", StringComparison.OrdinalIgnoreCase) ||
                         path.EndsWith("RarCache", StringComparison.OrdinalIgnoreCase))
@@ -5561,7 +5561,7 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
 
                 getAssemblyName = new GetAssemblyName(delegate (string path)
                 {
-                    if (String.Equals(path, @"r:\WINDOWS\Microsoft.NET\Framework\v2.0.myfx\B.dll", StringComparison.OrdinalIgnoreCase))
+                    if (String.Equals(path, @"r:\WINDOWS\Microsoft.NET\Framework64\v2.0.myfx\B.dll", StringComparison.OrdinalIgnoreCase))
                     {
                         return new AssemblyNameExtension("B, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a");
                     }

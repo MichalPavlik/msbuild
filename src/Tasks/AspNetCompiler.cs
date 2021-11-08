@@ -11,7 +11,7 @@ namespace Microsoft.Build.Tasks
     public class AspNetCompiler : ToolTaskExtension
     {
         /*
-            C:\WINDOWS\Microsoft.NET\Framework\v2.0.x86dbg>aspnet_compiler /?
+            C:\WINDOWS\Microsoft.NET\Framework64\v2.0.x86dbg>aspnet_compiler /?
             Utility to precompile an ASP.NET application
             Copyright (C) Microsoft Corporation. All rights reserved.
 

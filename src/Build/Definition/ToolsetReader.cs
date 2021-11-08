@@ -712,8 +712,8 @@ namespace Microsoft.Build.Evaluation
         /// <summary>
         /// Given a path, de-relativizes it using the location of the currently
         /// executing .exe as the base directory. For example, the path "..\foo"
-        /// becomes "c:\windows\microsoft.net\framework\foo" if the current exe is
-        /// "c:\windows\microsoft.net\framework\v3.5.1234\msbuild.exe".
+        /// becomes "c:\windows\Microsoft.NET\Framework64\foo" if the current exe is
+        /// "c:\windows\Microsoft.NET\Framework64\v3.5.1234\msbuild.exe".
         /// If the path is not relative, it is returned without modification.
         /// If the path is invalid, it is returned without modification.
         /// </summary>
