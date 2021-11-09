@@ -2010,10 +2010,10 @@ namespace Microsoft.Build.UnitTests
         [PlatformSpecific(TestPlatforms.Windows)] // "No ProgramFiles known location outside Windows"
         public void TestGeneratedReferenceAssemblyPath()
         {
-            string programFiles32 = FrameworkLocationHelper.GenerateProgramFiles32();
+            string programFiles64 = FrameworkLocationHelper.GenerateProgramFiles64();
             string referenceAssemblyRoot = FrameworkLocationHelper.GenerateProgramFilesReferenceAssemblyRoot();
             string pathToCombineWith = "Reference Assemblies\\Microsoft\\Framework";
-            string combinedPath = Path.Combine(programFiles32, pathToCombineWith);
+            string combinedPath = Path.Combine(programFiles64, pathToCombineWith);
             string fullPath = Path.GetFullPath(combinedPath);
 
             referenceAssemblyRoot.ShouldBe(fullPath, StringCompareShould.IgnoreCase);
